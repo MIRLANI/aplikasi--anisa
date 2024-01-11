@@ -64,7 +64,15 @@
 		<div class="mt-5">
 			<div class="alert alert-success">
 				<h5 class="font-weight-bold">Kesimpulan</h5>
-				<p>Berdasarkan dari gejala yang kamu pilih atau alami juga berdasarkan Role/Basis aturan yang sudah ditentukan oleh seorang pakar penyakit maka perhitungan Algoritma Certainty Factor mengambil nilai CF yang paling pinggi yakni <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }} ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu <b>{{ unserialize($riwayat->cf_max)[1] }}</b></p>
+				<p>Berdasarkan dari ciri kepribadian yang kamu pilih atau alami juga berdasarkan Role/Basis aturan yang sudah ditentukan oleh seorang pakar psikologi maka perhitungan Algoritma Certainty Factor mengambil nilai CF yang paling pinggi yakni <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }} ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu <b>{{ unserialize($riwayat->cf_max)[1] }}</b></p>
+			</div>
+            <div class="alert alert-success">
+				<h5 class="font-weight-bold">Deskripsi</h5>
+				<p>{{ unserialize($riwayat->cf_max)[1] }} adalah </b></p>
+			</div>
+			<div class="alert alert-success">
+				<h5 class="font-weight-bold">Pendekatan Guru</h5>
+				<p>Pendekatan yang dapat dilakukan guru pada siswa dengan kepribadian {{ unserialize($riwayat->cf_max)[1] }} yaitu </b></p>
 			</div>
 			<div class="mt-3 text-center">
 				<a href="{{ asset("storage/downloads/$riwayat->file_pdf") }}" target="_blank" class="btn btn-primary mr-1"><i class="fas fa-print mr-1"></i> Print</a>
