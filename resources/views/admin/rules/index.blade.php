@@ -70,8 +70,8 @@
 			<div class="col-md-4">
 				<div class="list-group">
 					@foreach($penyakit as $row)
-					<a href="{{ route('admin.rules', $row->id) }}" class="list-group-item list-group-item-action {{ ($data_penyakit->nama == $row->nama) ? 'active' : '' }}">
-					{{ $row->nama }}
+					<a href="{{ route('admin.rules', $row->id) }}" class="list-group-item list-group-item-action {{ ($data_penyakit->nama == $row->kepribadian) ? 'active' : '' }}">
+					{{ $row->kepribadian }}
 					</a>
 					@endforeach
 				</div>

@@ -16,7 +16,7 @@ class RuleController extends Controller
 
     public function index($id)
     {
-        $penyakit = Penyakit::select('nama', 'id')->get();
+        $penyakit = Penyakit::select('kepribadian', 'id')->get();
         $gejala = Gejala::all();
         $data_penyakit = Penyakit::find($id);
         $gejala_penyakit = $data_penyakit->gejalas();

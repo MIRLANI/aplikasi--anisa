@@ -16,6 +16,7 @@ class Penyakit extends Model
         'deskripsi',
         'pendekatan'
     ];
+    protected $table = 'penyakits';
 
     public $timestamps = false;
 
