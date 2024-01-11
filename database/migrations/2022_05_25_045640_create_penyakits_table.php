@@ -16,8 +16,9 @@ class CreatePenyakitsTable extends Migration
         Schema::create('penyakits', function (Blueprint $table) {
             $table->id();
             $table->string('kode');
-            $table->string('nama');
-            $table->text('penyebab');
+            $table->string('kepribadian');
+            $table->text('deskripsi');
+            $table->text('pendekatan');
         });
     }
 

@@ -1,5 +1,5 @@
 <x-app-layout>
-	<x-slot name="title">Daftar Penyakit</x-slot>
+	<x-slot name="title">Daftar Kepribadian</x-slot>
 	<x-alert-error></x-alert-error>
 	@if(session()->has('success'))
 	<x-alert type="success" message="{{ session()->get('success') }}" />
@@ -7,22 +7,23 @@
 	<x-card>
 		<x-slot name="option">
 			<div class="btn btn-success add">
-				<i class="fas fa-plus mr-1"></i> Tambahkan Penyakit
+				<i class="fas fa-plus mr-1"></i> Tambahkan kepribadian
 			</div>
 		</x-slot>
 		<table class="table table-hover border">
 			<thead>
 				<th>Kode</th>
-				<th>Nama penyakit</th>
-				<th>Penyebab</th>
-				<th></th>
+				<th>Kepribadian</th>
+				<th>Deskrispsi</th>
+				<th>Pendekatan</th>
 			</thead>
 			<tbody>
 				@forelse($penyakit as $row)
 				<tr>
 					<td><b>{{ $row->kode }}</b></td>
-					<td>{{ $row->nama }}</td>
-					<td>{{ \Str::limit($row->penyebab, 180) }}</td>
+					<td>{{ $row->kepribadian }}</td>
+					<td>{{ \Str::limit($row->deskripsi, 180) }}</td>
+					<td>{{ \Str::limit($row->pendekatan, 180) }}</td>
 					<td>
 						<div class="d-flex justify-between-space">
 							<div>
@@ -50,22 +51,30 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="nama">Kode penyakit</label>
+						<label for="nama">Kode Kepribadian</label>
 						<input type="text" class="form-control" name="kode">
 					</div>
 				</div>
 				<div class="col-md-8">
 					<div class="form-group">
-						<label for="nama">Nama penyakit</label>
-						<input type="text" class="form-control" name="nama">
+						<label for="nama">Nama Kepribadian</label>
+						<input type="text" class="form-control" name="kepribadian">
 					</div>
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label for="penyebab">Keterangan penyebab</label>
-						<textarea name="penyebab" cols="30" rows="6" class="form-control"></textarea>
+						<label for="penyebab">Deskrispi Kepribadian</label>
+						<textarea name="deskripsi" cols="30" rows="6" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="penyebab">Pendekatan</label>
+						<textarea name="pendekatan" cols="30" rows="6" class="form-control"></textarea>
 					</div>
 				</div>
 			</div>
@@ -75,29 +84,37 @@
 		</form>
 	</x-modal>
 
-	<x-modal title="Edit penyakit" id="edit-penyakit">
+	<x-modal title="Edit Kepribadian" id="edit-penyakit">
 		<form action="{{ route('admin.penyakit.update') }}" method="POST">
 			@csrf
 			<input type="hidden" name="id">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="nama">Kode penyakit</label>
+						<label for="nama">Kode Kepribadian</label>
 						<input type="text" class="form-control" name="kode">
 					</div>
 				</div>
 				<div class="col-md-8">
 					<div class="form-group">
-						<label for="nama">Nama penyakit</label>
-						<input type="text" class="form-control" name="nama">
+						<label for="nama">Nama Kepribadian</label>
+						<input type="text" class="form-control" name="kepribadian">
 					</div>
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label for="penyebab">Keterangan penyebab</label>
-						<textarea name="penyebab" cols="30" rows="6" class="form-control"></textarea>
+						<label for="penyebab">Deskripsi Kepribadian</label>
+						<textarea name="deskripsi" cols="30" rows="6" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="penyebab">Pendekatan</label>
+						<textarea name="pendekatan" cols="30" rows="6" class="form-control"></textarea>
 					</div>
 				</div>
 			</div>

@@ -12,8 +12,9 @@ class Penyakit extends Model
 
     protected $fillable = [
         'kode',
-        'nama',
-        'penyebab'
+        'kepribadian',
+        'deskripsi',
+        'pendekatan'
     ];
 
     public $timestamps = false;

@@ -49,7 +49,7 @@
 
     @can('penyakit-list')
     <x-nav-link 
-        text="Daftar Penyakit" 
+        text="Daftar Kepribadian" 
         icon="th-list" 
         url="{{ route('admin.penyakit') }}"
         active="{{ request()->routeIs('admin.penyakit') ? ' active' : '' }}"

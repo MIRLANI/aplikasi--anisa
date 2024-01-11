@@ -40,11 +40,11 @@ Route::group([
 	Route::post('/member/{id}/delete', [UserController::class, 'destroy'])->name('member.delete');
 
 	// menu penyakit
-	Route::get('/penyakit', [PenyakitController::class, 'index'])->name('penyakit');
-	Route::post('/penyakit', [PenyakitController::class, 'store'])->name('penyakit.store');
-	Route::get('/penyakit/json', [PenyakitController::class, 'json'])->name('penyakit.json');
-	Route::post('/penyakit/update', [PenyakitController::class, 'update'])->name('penyakit.update');
-	Route::post('/penyakit/{penyakit}/destroy', [PenyakitController::class, 'destroy'])->name('penyakit.destroy');
+	Route::get('/kepribadian', [PenyakitController::class, 'index'])->name('penyakit');
+	Route::post('/kepribadian', [PenyakitController::class, 'store'])->name('penyakit.store');
+	Route::get('/kepribadian/json', [PenyakitController::class, 'json'])->name('penyakit.json');
+	Route::post('/kepribadian/update', [PenyakitController::class, 'update'])->name('penyakit.update');
+	Route::post('/kepribadian/{penyakit}/destroy', [PenyakitController::class, 'destroy'])->name('penyakit.destroy');
 
 	// menu gejala
 	Route::get('/gejala', [GejalaController::class, 'index'])->name('gejala');
